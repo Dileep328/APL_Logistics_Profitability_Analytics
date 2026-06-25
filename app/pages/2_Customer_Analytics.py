@@ -18,25 +18,24 @@ st.set_page_config(
 # ==========================================
 
 @st.cache_data
-def load_data():
+def load_data(uploaded_file):
+    return pd.read_csv(uploaded_file)
 
-    project_root = os.path.abspath(
-        os.path.join(
-            os.path.dirname(__file__),
-            "../.."
-        )
+
+st.sidebar.header("Upload Dataset")
+
+uploaded_file = st.sidebar.file_uploader(
+    "Upload cleaned_data.csv",
+    type=["csv"]
+)
+
+if uploaded_file is None:
+    st.warning(
+        "Please upload cleaned_data.csv to continue."
     )
+    st.stop()
 
-    file_path = os.path.join(
-        project_root,
-        "data",
-        "processed",
-        "cleaned_data.csv"
-    )
-
-    return pd.read_csv(file_path)
-
-df = load_data()
+df = load_data(uploaded_file)
 
 # ==========================================
 # Title
