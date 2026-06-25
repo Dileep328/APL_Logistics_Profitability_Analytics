@@ -226,3 +226,13 @@ Predict whether an order will be profitable before execution.
 ```bash
 pip install -r requirements.txt# APL_Logistics_Profitability_Analytics
 # APL_Logistics_Profitability_Analytics
+
+## Dataset
+
+Dataset is excluded from GitHub due to file size limitations.
+
+To run the dashboard:
+
+1. Launch Streamlit app
+2. Upload cleaned_data.csv using the sidebar
+3. Explore analytics dashboards
